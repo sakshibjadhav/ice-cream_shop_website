@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+<div class="container m-5, p-5">
+    <form method="post" action="/order/">
+    {% csrf_token %}
+    <div class="form-group m-3">
+        <label for="name">Name</label>
+        <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group m-3">
+        <label for="desc" class="form-label">Address</label>
+        <textarea class="form-control" id="desc" name="address" placeholder="Enter your address" rows="3"></textarea>
+    </div>
+    <select class="form-select m-3" aria-label="Default select example" name="itype">
+        <option selected>Select ice-cream type</option>
+        <option value="Rolled Ice Cream">Rolled Ice Cream</option>
+        <option value="Soft Sevre">Soft Sevre</option>
+        <option value="Frozen Yogurt">Frozen Yogurt</option>
+        <option value="Snow Cream">Snow Cream</option>
+        <option value="Kulfi">Kulfi</option>
+    </select>
+    <select class="form-select m-3" aria-label="Default select example" name="flavour">
+        <option selected>Select Flavour</option>
+        <option value="Vanilla">Vanilla</option>
+        <option value="Chocolate">Chocolate</option>
+        <option value="Strawberry">Strawberry</option>
+        <option value="Butterscotch Ribbon">Butterscotch Ribbon</option>
+        <option value="Mango">Mango</option>
+        <option value="Date Nut">Date Nut</option>
+    </select>
+    <select class="form-select m-3" aria-label="Default select example" name="quantity">
+        <option selected>Select Quantity</option>
+        <option value="1 Scope">1 Scope</option>
+        <option value="2-3 scops">2-3 scops</option>
+        <option value="Family Pack">Family Pack</option>
+    </select>
+    <button type="submit" class="btn btn-primary m-3">Submit</button>
+    </form>
+</div>
+{% endblock body %}
